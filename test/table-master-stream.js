@@ -43,4 +43,21 @@ describe('Table Master Stream', () => {
             .on('data', () => done('should raise error'));
     });
 
+    it('should emit events based on the kind of message', done => {
+        let eventSeen = false;
+        text('west passes')
+            .pipe(tms())
+            .on('error', done)
+            .on('end', () => {
+                eventSeen.should.equal(true);
+                done();
+            })
+            .on('data', () => {})
+            .on('bid', msg => {
+                eventSeen = true;
+                msg.should.have.property('bid', 'pass');
+                msg.should.have.property('seat', 'W');
+            });
+    });
+
 });

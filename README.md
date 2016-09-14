@@ -53,7 +53,10 @@ Produces the output
         text: 'south plays AS' 
     }
     
+Individual messages can be acted upon.  The event name is the `message.kind`, as in:
 
+    .on('play', msg => console.log(msg))
+    
 # License
 The [MIT license](LICENSE).
 

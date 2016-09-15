@@ -39,7 +39,11 @@ describe('Table Master Stream', () => {
     it('should error on an invalid message', done => {
         text('south-east bids 1NT')
             .pipe(tms())
-            .on('error', () => done())
+            .on('error', e => {
+                e.should.be.instanceOf(Error);
+                e.should.have.property('message');
+                done();
+            })
             .on('data', () => done('should raise error'));
     });
 

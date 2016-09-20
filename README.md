@@ -4,7 +4,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/richardschneider/table-master-stream/badge.svg?branch=master)](https://coveralls.io/github/richardschneider/table-master-stream?branch=master)
  [![npm version](https://badge.fury.io/js/table-master-stream.svg)](https://badge.fury.io/js/table-master-stream) 
  
-**table-master-stream** parses and transforms a stream of  [Blue Chip Bridge Table Manager Protocol](http://www.bluechipbridge.co.uk/protocol.htm) messages into a series of javascript objects via the [node stream](https://nodejs.org/api/stream.html#stream_api_for_stream_consumers) design pattern.  
+**table-master-stream** parses and transforms a stream of  [Blue Chip Bridge Table Manager Protocol](http://www.bluechipbridge.co.uk/protocol.htm) messages into a series of javascript objects via the [node stream](https://nodejs.org/api/stream.html#stream_api_for_stream_consumers) design pattern. It is available for [Node.js](https://nodejs.org) 
+and most modern browsers.  If you want to know if your currrent browser is compatible, 
+run the [online test suite](https://unpkg.com/table-master-stream/test/index.html).
 
 The transformed object contains a `kind`, `text` and other properties that describes the message.  The 
 [message](https://unpkg.com/table-master-parser/dist/doc/index.html) parsing
@@ -56,7 +58,19 @@ Produces the output
 Individual messages can be acted upon.  The event name is the `message.kind`, as in:
 
     .on('play', msg => console.log(msg))
-    
+
+## Browser
+
+Include the package from your project
+
+    <script src="./node_modules/table-master-stream/dist/table-master-stream.min.js" type="text/javascript"></script>
+
+or from the [unpkg CDN](https://unpkg.com)
+
+    <script src="https://unpkg.com/table-master-stream/dist/table-master-stream.min.js"></script>
+
+This will provide `tableMasterStream` as a global object, or `define` it if you are using [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition).
+
 # License
 The [MIT license](LICENSE).
 

@@ -6,7 +6,16 @@
   "license": "MIT",
   "main": "index.js",
   "browserify": {
-    "transform": [["babelify", { "presets": ["es2015"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
   },
   "author": {
     "name": "Richard Schneider",
@@ -42,6 +51,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-spawn-mocha": "^3.1.0",
     "gulp-uglify": "^2.0.0",
+    "istanbul": "^0.4.5",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "mkdirp": "^0.5.1",

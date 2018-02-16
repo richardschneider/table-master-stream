@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "lstream": "0.0.4",
-    "multipipe": "^1.0.2",
+    "multipipe": "^2.0.3",
     "table-master-parser": "^1.2.8"
   },
   "devDependencies": {
